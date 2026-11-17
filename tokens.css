@@ -1,0 +1,69 @@
+/* Hallmark · tokens · theme: custom (royal-sapphire & imperial gold) */
+:root {
+  /* Surface & Ink — deep midnight sapphire + warm ivory */
+  --color-paper:        oklch(13% 0.018 255);
+  --color-paper-2:      oklch(17% 0.022 255);
+  --color-paper-3:      oklch(22% 0.025 255);
+  --color-rule:         oklch(30% 0.024 255);
+  --color-rule-strong:  oklch(42% 0.030 255);
+
+  --color-ink:          oklch(95% 0.010 85);
+  --color-muted:        oklch(77% 0.014 250);
+  --color-neutral:      oklch(68% 0.014 250);
+
+  /* Accent — imperial gold from the drama artwork */
+  --color-accent:       oklch(79% 0.145 78);
+  --color-accent-hover: oklch(83% 0.145 78);
+  --color-accent-active:oklch(74% 0.145 78);
+  --color-accent-ink:   oklch(16% 0.025 70);
+  --color-accent-soft:  oklch(24% 0.048 78);
+
+  /* Atmospheric radial bloom tokens */
+  --color-bloom-gold:   oklch(55% 0.12 78 / 0.14);
+  --color-bloom-blue:   oklch(40% 0.14 255 / 0.22);
+  --color-backdrop:     oklch(8% 0.018 255 / 0.82);
+
+  /* Focus ring — high contrast against dark paper */
+  --color-focus:        oklch(92% 0.055 85);
+
+  /* Typography — 2-face pairing */
+  --font-display:       "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-body:          "Geist", ui-sans-serif, system-ui, sans-serif;
+
+  /* Scale (1.25 ratio) */
+  --text-xs:            0.75rem;    /* 12px */
+  --text-sm:            0.875rem;   /* 14px */
+  --text-base:          1rem;       /* 16px */
+  --text-md:            1.25rem;    /* 20px */
+  --text-lg:            1.5625rem;  /* 25px */
+  --text-xl:            1.9531rem;  /* 31.25px */
+  --text-display:       clamp(2.25rem, 4.2vw + 1rem, 3.65rem);
+
+  /* Spacing — 4pt base scale */
+  --space-2xs:          0.25rem;    /* 4px */
+  --space-xs:           0.5rem;     /* 8px */
+  --space-sm:           0.75rem;    /* 12px */
+  --space-md:           1rem;       /* 16px */
+  --space-lg:           1.5rem;     /* 24px */
+  --space-xl:           2.5rem;     /* 40px */
+  --space-2xl:          4rem;       /* 64px */
+
+  /* Radii */
+  --radius-sm:          0.375rem;
+  --radius-md:          0.75rem;
+  --radius-lg:          1rem;
+  --radius-pill:        9999px;
+
+  /* Motion */
+  --ease-out:           cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:            cubic-bezier(0.7, 0, 0.84, 0);
+  --dur-instant:        80ms;
+  --dur-short:          180ms;
+  --dur-modal:          260ms;
+
+  /* Elevation & Z-index */
+  --shadow-poster:      0 18px 40px oklch(6% 0.02 255 / 0.55);
+  --z-base:             1;
+  --z-raised:           10;
+  --z-modal:            400;
+}
