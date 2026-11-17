@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Acesso VIP Liberado — Casada com o Rei Dragão</title>
+  <meta name="description" content="Área VIP exclusiva. Assista à temporada completa de Casada com o Rei Dragão (Married to the Hidden Dragon King) dublado com acesso vitalício.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Geist:wght@400;500;600;700&display=swap">
+
+  <style>
+    /* Hallmark · genre: atmospheric · macrostructure: Workbench · theme: custom (royal-sapphire & gold) · enrichment: none · nav: N9 · footer: Ft2 · contrast: pass (40–41) · slop: pass (42–45) · honest: pass (46) · chrome: pass (47) · tokens: pass (48) · responsive: pass (49) · icons: pass (30) · mobile: pass (34, 49, 50–57) */
+    /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
+
+    :root {
+      /* Surface & Ink — deep midnight sapphire + warm ivory */
+      --color-paper:        oklch(13% 0.018 255);
+      --color-paper-2:      oklch(17% 0.022 255);
+      --color-paper-3:      oklch(22% 0.025 255);
+      --color-rule:         oklch(30% 0.024 255);
+      --color-rule-strong:  oklch(42% 0.030 255);
+
+      --color-ink:          oklch(95% 0.010 85);
+      --color-muted:        oklch(77% 0.014 250);
+      --color-neutral:      oklch(68% 0.014 250);
+
+      /* Accent — imperial gold */
+      --color-accent:       oklch(79% 0.145 78);
+      --color-accent-hover: oklch(83% 0.145 78);
+      --color-accent-active:oklch(74% 0.145 78);
+      --color-accent-ink:   oklch(16% 0.025 70);
+      --color-accent-soft:  oklch(24% 0.048 78);
+      --color-accent-rule:  oklch(52% 0.110 78);
+
+      /* Atmospheric radial bloom tokens */
+      --color-bloom-gold:   oklch(55% 0.12 78 / 0.14);
+      --color-bloom-blue:   oklch(40% 0.14 255 / 0.22);
+
+      /* Focus ring */
+      --color-focus:        oklch(92% 0.055 85);
+
+      /* Typography — 2-face pairing */
+      --font-display:       "Cormorant Garamond", ui-serif, Georgia, serif;
+      --font-body:          "Geist", ui-sans-serif, system-ui, sans-serif;
+
+      /* Scale */
+      --text-xs:            0.75rem;
+      --text-sm:            0.875rem;
+      --text-base:          1rem;
+      --text-md:            1.25rem;
+      --text-lg:            1.5625rem;
+      --text-display:       clamp(2rem, 3.6vw + 1rem, 3.25rem);
+
+      /* Spacing — 4pt scale */
+      --space-2xs:          0.25rem;
+      --space-xs:           0.5rem;
+      --space-sm:           0.75rem;
+      --space-md:           1rem;
+      --space-lg:           1.5rem;
+      --space-xl:           2.5rem;
+
+      /* Radii */
+      --radius-md:          0.75rem;
+      --radius-lg:          1rem;
+      --radius-pill:        9999px;
+
+      /* Motion */
+      --ease-out:           cubic-bezier(0.16, 1, 0.3, 1);
+      --dur-instant:        80ms;
+      --dur-short:          180ms;
+
+      /* Elevation */
+      --shadow-stage:       0 22px 48px oklch(6% 0.02 255 / 0.65);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-x: clip;
+      font-size: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      overflow-x: clip;
+      margin: 0;
+      min-height: 100dvh;
+      background-color: var(--color-paper);
+      background-image:
+        radial-gradient(46rem 34rem at 14% 6%, var(--color-bloom-blue), transparent 70%),
+        radial-gradient(38rem 28rem at 86% 14%, var(--color-bloom-gold), transparent 72%);
+      background-attachment: fixed;
+      color: var(--color-ink);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      font-weight: 400;
+      line-height: 1.55;
+      padding-inline: max(var(--space-md), env(safe-area-inset-left));
+      padding-bottom: max(var(--space-xl), env(safe-area-inset-bottom));
+    }
+
+    :focus {
+      outline: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--color-focus);
+      outline-offset: 3px;
+    }
+
+    .topbar,
+    .vip-page,
+    .foot {
+      width: 100%;
+      max-width: 60rem;
+      margin-inline: auto;
+    }
+
+    /* Edge-aligned VIP bar (N9) */
+    .topbar {
+      padding-block: var(--space-md) var(--space-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      border-bottom: 1px solid var(--color-rule);
+    }
+
+    .topbar__vip {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .topbar__icon {
+      width: 1rem;
+      height: 1rem;
+      flex-shrink: 0;
+    }
+
+    .topbar__meta {
+      font-size: var(--text-xs);
+      color: var(--color-muted);
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    /* Main VIP deliverable container */
+    .vip-page {
+      padding-block: var(--space-lg) var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    /* VIP Status Header */
+    .vip-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      min-width: 0;
+    }
+
+    .vip-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: var(--space-2xs) var(--space-sm);
+      min-height: 2rem;
+      border-radius: var(--radius-pill);
+      background-color: var(--color-accent-soft);
+      border: 1px solid var(--color-accent-rule);
+      color: var(--color-accent);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .vip-badge__icon {
+      width: 0.9rem;
+      height: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .vip-header__title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-style: normal;
+      font-weight: 700;
+      font-size: var(--text-display);
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+      color: var(--color-ink);
+      overflow-wrap: anywhere;
+      min-width: 0;
+    }
+
+    .vip-header__sub {
+      margin: 0;
+      max-width: 58ch;
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+    }
+
+    /* VIP Video Stage */
+    .player-stage {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+      min-width: 0;
+    }
+
+    .player-stage__bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-xs) var(--space-md);
+    }
+
+    .player-stage__label {
+      margin: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-ink);
+      line-height: 1;
+    }
+
+    .player-stage__dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: var(--radius-pill);
+      background-color: var(--color-accent);
+      flex-shrink: 0;
+    }
+
+    .player-stage__quality {
+      font-size: var(--text-xs);
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+
+    .player-stage__frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-accent-rule);
+      background-color: var(--color-paper-2);
+      box-shadow: var(--shadow-stage);
+    }
+
+    .player-stage__frame iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* VIP Privileges & Bookmark Panel (asymmetric split on desktop) */
+    .vip-details {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-md);
+      padding: var(--space-lg);
+      border-radius: var(--radius-lg);
+      background-color: var(--color-paper-2);
+      border: 1px solid var(--color-rule);
+    }
+
+    .vip-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .vip-list__item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+    }
+
+    .vip-list__item strong {
+      color: var(--color-ink);
+      font-weight: 600;
+    }
+
+    .vip-list__icon {
+      width: 1.125rem;
+      height: 1.125rem;
+      color: var(--color-accent);
+      flex-shrink: 0;
+      margin-top: var(--space-2xs);
+    }
+
+    .vip-save {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--space-sm);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-rule);
+    }
+
+    .vip-save__copy {
+      margin: 0;
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+    }
+
+    .vip-save__copy strong {
+      color: var(--color-ink);
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+      min-height: 3rem;
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      line-height: 1;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+      transition:
+        background-color var(--dur-short) var(--ease-out),
+        border-color var(--dur-short) var(--ease-out),
+        color var(--dur-short) var(--ease-out),
+        transform var(--dur-instant) var(--ease-out);
+    }
+
+    .btn--vip {
+      width: 100%;
+      background-color: var(--color-accent);
+      color: var(--color-accent-ink);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .btn--vip:hover {
+        background-color: var(--color-accent-hover);
+        transform: translateY(-1px);
+      }
+    }
+
+    .btn--vip:active {
+      background-color: var(--color-accent-active);
+      transform: translateY(1px);
+    }
+
+    .btn--vip.is-copied {
+      background-color: var(--color-paper-3);
+      border-color: var(--color-accent-rule);
+      color: var(--color-accent);
+    }
+
+    .btn[aria-disabled="true"],
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .btn__icon {
+      width: 1rem;
+      height: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* Footer (Ft2) */
+    .foot {
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-rule);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-xs) var(--space-md);
+      font-size: var(--text-xs);
+      color: var(--color-neutral);
+    }
+
+    @media (min-width: 48rem) {
+      .vip-page {
+        padding-block: var(--space-xl);
+      }
+
+      .vip-details {
+        grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+        gap: var(--space-xl);
+        align-items: center;
+      }
+
+      .vip-save {
+        padding-top: 0;
+        padding-inline-start: var(--space-xl);
+        border-top: 0;
+        border-inline-start: 1px solid var(--color-rule);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <span class="topbar__vip">
+      <svg class="topbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"></path>
+        <path d="M5 21h14"></path>
+      </svg>
+      <span>Área VIP · Acesso Liberado</span>
+    </span>
+    <span class="topbar__meta">Acesso vitalício ativo</span>
+  </header>
+
+  <main class="vip-page">
+    <header class="vip-header">
+      <span class="vip-badge">
+        <svg class="vip-badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <span>Membro VIP confirmado</span>
+      </span>
+
+      <h1 class="vip-header__title">Casada com o Rei Dragão</h1>
+      <p class="vip-header__sub">
+        Seu acesso VIP exclusivo foi liberado com sucesso. Dê o play abaixo para assistir à temporada completa dublada, sem cortes e sem mensalidades.
+      </p>
+    </header>
+
+    <section class="player-stage" aria-label="Reprodutor VIP do drama completo">
+      <div class="player-stage__bar">
+        <p class="player-stage__label">
+          <span class="player-stage__dot" aria-hidden="true"></span>
+          <span>Player VIP · Temporada Completa Dublada</span>
+        </p>
+        <span class="player-stage__quality">Exclusivo para membros VIP</span>
+      </div>
+
+      <div class="player-stage__frame">
+        <iframe
+          width="1335"
+          height="751"
+          src="https://www.youtube.com/embed/V9SEBNyTX8c"
+          title="VIP - Casada Com o Rei Dragão Dublado"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <section class="vip-details" aria-label="Garantias do seu acesso VIP">
+      <ul class="vip-list">
+        <li class="vip-list__item">
+          <svg class="vip-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span><strong>Acesso VIP vitalício:</strong> este link exclusivo permanece ativo para você assistir quando e quantas vezes quiser.</span>
+        </li>
+        <li class="vip-list__item">
+          <svg class="vip-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span><strong>Temporada completa dublada:</strong> assista no celular, computador ou transmita para sua TV em tela cheia.</span>
+        </li>
+        <li class="vip-list__item">
+          <svg class="vip-list__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span><strong>Sem mensalidades:</strong> conteúdo 100% liberado em definitivo na sua área de membro VIP.</span>
+        </li>
+      </ul>
+
+      <div class="vip-save">
+        <p class="vip-save__copy">
+          <strong>Salve seu link VIP:</strong> adicione esta página aos favoritos ou copie o endereço abaixo para acessar depois.
+        </p>
+        <button type="button" class="btn btn--vip" id="copy-vip-link">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span id="copy-vip-label">Copiar link VIP</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>Área VIP · Casada com o Rei Dragão (Married to the Hidden Dragon King)</span>
+    <span>Acesso vitalício confirmado</span>
+  </footer>
+
+  <script>
+    (function () {
+      const copyBtn = document.getElementById("copy-vip-link");
+      const copyLabel = document.getElementById("copy-vip-label");
+      if (!copyBtn || !copyLabel) return;
+
+      let resetTimer = null;
+
+      copyBtn.addEventListener("click", async function () {
+        const vipUrl = window.location.href;
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(vipUrl);
+          } else {
+            const temp = document.createElement("input");
+            temp.value = vipUrl;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand("copy");
+            document.body.removeChild(temp);
+          }
+
+          copyBtn.classList.add("is-copied");
+          copyLabel.textContent = "Link VIP copiado";
+          clearTimeout(resetTimer);
+          resetTimer = setTimeout(function () {
+            copyBtn.classList.remove("is-copied");
+            copyLabel.textContent = "Copiar link VIP";
+          }, 2800);
+        } catch (_) {
+          copyLabel.textContent = "Salve nos favoritos";
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
