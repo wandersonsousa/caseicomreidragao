@@ -42,7 +42,7 @@
             id="top-checkout"
             href="https://pay.lowify.com.br/checkout.php?product_id=GQeIWm"
           >
-            Assistir agora · R$ 9,90
+            Assistir agora · R$ 5,99
           </a>
         </div>
       </div>
@@ -94,7 +94,7 @@
         </ul>
 
         <div class="offer-pricing">
-          <span class="offer-pricing__price">R$ 9,90</span>
+          <span class="offer-pricing__price">R$ 5,99</span>
           <span class="offer-pricing__note">Pagamento único</span>
         </div>
 
@@ -103,7 +103,7 @@
           id="primary-checkout"
           href="https://pay.lowify.com.br/checkout.php?product_id=GQeIWm"
         >
-          Assistir agora · R$ 9,90
+          Assistir agora · R$ 5,99
         </a>
 
         <p class="offer-panel__footnote">
@@ -118,135 +118,5 @@
     <span>Temporada completa · Sem mensalidades</span>
   </footer>
 
-  <dialog
-    class="recovery-dialog"
-    id="exit-recovery-modal"
-    aria-labelledby="recovery-title"
-    aria-describedby="recovery-desc"
-  >
-    <div class="recovery-dialog__header">
-      <div>
-        <p class="recovery-dialog__kicker">Condição de última hora</p>
-        <h2 class="recovery-dialog__title" id="recovery-title">Leve a temporada completa por R$ 5,93</h2>
-      </div>
-      <button
-        type="button"
-        class="recovery-dialog__close"
-        id="recovery-close"
-        aria-label="Fechar oferta especial"
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-
-    <p class="recovery-dialog__body" id="recovery-desc">
-      Antes de sair, liberamos um desconto exclusivo para você assistir a <strong>Casada com o Rei Dragão</strong> completo — acesso vitalício e imediato, sem mensalidades.
-    </p>
-
-    <div class="recovery-dialog__price-box">
-      <span class="recovery-dialog__old">R$ 9,90</span>
-      <span class="recovery-dialog__new">R$ 5,93</span>
-      <span class="recovery-dialog__tag">Pagamento único</span>
-    </div>
-
-    <div class="recovery-dialog__actions">
-      <a
-        class="btn btn--primary"
-        id="recovery-checkout"
-        href="https://pay.lowify.com.br/go.php?offer=117ecdf1"
-      >
-        Garantir por R$ 5,93
-      </a>
-      <button type="button" class="btn btn--ghost" id="recovery-dismiss">
-        Continuar na página
-      </button>
-    </div>
-  </dialog>
-
-  <script>
-    (function () {
-      const dialog = document.getElementById("exit-recovery-modal");
-      const mainContent = document.getElementById("main-content");
-      const primaryCheckout = document.getElementById("primary-checkout");
-      const recoveryCheckout = document.getElementById("recovery-checkout");
-      const closeBtn = document.getElementById("recovery-close");
-      const dismissBtn = document.getElementById("recovery-dismiss");
-
-      if (!dialog) return;
-
-      let recoveryShown = false;
-      let isNavigatingToCheckout = false;
-      let backTrapArmed = false;
-
-      function armBackTrap() {
-        if (backTrapArmed || recoveryShown) return;
-        try {
-          window.history.pushState({ exitRecoveryGuard: true }, "", window.location.href);
-          backTrapArmed = true;
-        } catch (_) {
-          /* Ignore history restrictions */
-        }
-      }
-
-      function openRecoveryModal() {
-        if (recoveryShown || isNavigatingToCheckout || dialog.open) return;
-        recoveryShown = true;
-        if (mainContent) mainContent.inert = true;
-        dialog.showModal();
-        recoveryCheckout.focus({ preventScroll: true });
-      }
-
-      function closeRecoveryModal() {
-        if (!dialog.open) return;
-        dialog.close();
-        if (mainContent) mainContent.inert = false;
-      }
-
-      /* Prevent exit modal when user is intentionally heading to checkout */
-      document.querySelectorAll('a[href*="pay.lowify.com.br"]').forEach(function (link) {
-        link.addEventListener("click", function () {
-          isNavigatingToCheckout = true;
-        });
-      });
-
-      /* Desktop exit-intent: cursor moves out past the top edge of viewport */
-      document.addEventListener("mouseout", function (event) {
-        if (recoveryShown || isNavigatingToCheckout) return;
-        if (event.relatedTarget || event.toElement) return;
-        if (event.clientY <= 6) {
-          openRecoveryModal();
-        }
-      });
-
-      /* Mobile & in-app browser back-button recovery */
-      armBackTrap();
-      ["pointerdown", "touchstart", "scroll"].forEach(function (evtName) {
-        window.addEventListener(evtName, armBackTrap, { once: true, passive: true });
-      });
-
-      window.addEventListener("popstate", function () {
-        if (!recoveryShown && !isNavigatingToCheckout) {
-          openRecoveryModal();
-        }
-      });
-
-      /* Modal dismiss controls */
-      closeBtn.addEventListener("click", closeRecoveryModal);
-      dismissBtn.addEventListener("click", closeRecoveryModal);
-
-      dialog.addEventListener("click", function (event) {
-        if (event.target === dialog) {
-          closeRecoveryModal();
-        }
-      });
-
-      dialog.addEventListener("close", function () {
-        if (mainContent) mainContent.inert = false;
-      });
-    })();
-  </script>
 </body>
 </html>
