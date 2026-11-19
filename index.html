@@ -32,8 +32,19 @@
   <main class="page" id="main-content">
     <section class="sales-grid" aria-labelledby="drama-title">
       <div class="hero-header">
-        <h1 class="hero-header__title" id="drama-title">Casada com o Rei Dragão</h1>
-        <p class="hero-header__original">Married to the Hidden Dragon King</p>
+        <div class="hero-header__content">
+          <h1 class="hero-header__title" id="drama-title">Casada com o Rei Dragão</h1>
+          <p class="hero-header__original">Married to the Hidden Dragon King</p>
+        </div>
+        <div class="hero-header__cta">
+          <a
+            class="btn btn--primary hero-header__btn"
+            id="top-checkout"
+            href="https://pay.lowify.com.br/checkout.php?product_id=GQeIWm"
+          >
+            Assistir agora · R$ 9,90
+          </a>
+        </div>
       </div>
 
       <figure class="poster-card">
@@ -195,8 +206,7 @@
       }
 
       /* Prevent exit modal when user is intentionally heading to checkout */
-      [primaryCheckout, recoveryCheckout].forEach(function (link) {
-        if (!link) return;
+      document.querySelectorAll('a[href*="pay.lowify.com.br"]').forEach(function (link) {
         link.addEventListener("click", function () {
           isNavigatingToCheckout = true;
         });
